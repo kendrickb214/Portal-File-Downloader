@@ -1,22 +1,19 @@
 [tool.poetry]
-name = "browser-log-scraper"
+name = "portal-file-downloader-api"
 version = "0.1.0"
-description = "A Python project to capture browser console and network logs."
+description = "Python API to automate file downloads via Playwright."
 authors = ["Your Name <your@email.com>"]
-readme = "README.md"
 license = "MIT"
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
-]
+package-mode = false  # <-- ADDED THIS LINE
 
 [tool.poetry.dependencies]
 python = ">=3.8"
-playwright = "*" # You can pin this to a specific version, e.g., "^1.40.0"
+playwright = "*"
+flask = "^3.0.0"      # Added Flask
+flask-cors = "^4.0.0" # Added Flask-CORS for the extension
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^8.0.0" # Example of version pinning
+pytest = "^8.0.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
