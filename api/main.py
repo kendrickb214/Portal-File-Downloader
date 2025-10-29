@@ -3,6 +3,7 @@ import os
 from playwright.async_api import async_playwright, expect
 
 # --- Credentials for the public test website ---
+# This is what I'm using for now to test the code until I get the real information
 LOGIN_URL = "https://the-internet.herokuapp.com/login"
 DOWNLOADS_URL = "https://the-internet.herokuapp.com/download"
 USERNAME = "tomsmith"
@@ -20,8 +21,11 @@ async def main():
         try:
             print("Launching browser...")
             # We launch in non-headless mode (headless=False) and add a
-            # slow_mo so you can see what's happening.
+            # slow_mo so you can see what's happening WILL BE REMOVED IN PROD.
             browser = await p.chromium.launch(headless=False, slow_mo=500)
+            
+            # --- PRODUCTION ---
+            #browser = await p.chromium.launch(headless=True)
             
             page = await browser.new_page()
             
