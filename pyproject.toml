@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "browser-log-scraper"
+version = "0.1.0"
+description = "A Python project to capture browser console and network logs."
+authors = ["Your Name <your@email.com>"]
+readme = "README.md"
+license = "MIT"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.8"
+playwright = "*" # You can pin this to a specific version, e.g., "^1.40.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0" # Example of version pinning
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
