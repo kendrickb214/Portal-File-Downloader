@@ -34,7 +34,7 @@ def run_automation_task():
             page = browser.new_page()
             
             # 1. LOGIN
-            print(f"API: Navigating to login page...")
+            print("API: Navigating to login page...")
             page.goto(LOGIN_URL)
             
             print("API: Filling in login form...")
@@ -50,11 +50,11 @@ def run_automation_task():
             print("API: Login successful!")
             
             # 3. NAVIGATE TO DOWNLOAD
-            print(f"API: Navigating to download page...")
+            print("API: Navigating to download page...")
             page.goto(DOWNLOADS_URL)
             
             # 4. DOWNLOAD FILE
-            print(f"API: Waiting to download file...")
+            print("API: Waiting to download file...")
             
             # Start a listener for the download event AND trigger the click
             with page.expect_download() as download_info:
