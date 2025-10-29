@@ -1,0 +1,32 @@
+# Ignore VS Code settings
+
+.vscode/
+
+# Python
+
+**pycache**/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv/
+poetry.lock
+*.log
+
+# Playwright
+
+playwright-report/
+test-results/
+*.zip
+
+# Node / Chrome Extension
+
+node_modules/
+dist/
+build/
+npm-debug.log*
+
+# OS-specific files
+
+.DS_Store
+Thumbs.db

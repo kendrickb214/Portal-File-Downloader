@@ -4,7 +4,6 @@ from flask import Flask, jsonify
 from flask_cors import CORS
 from playwright.sync_api import sync_playwright, Error as PlaywrightError
 
-# --- Configuration ---
 # --- Credentials for the public test website ---
 # This is what I'm using for now to test the code until I get the real information
 LOGIN_URL = "https://the-internet.herokuapp.com/login"
@@ -18,11 +17,9 @@ DOWNLOAD_PATH = os.path.join(os.getcwd(), "downloaded_file.txt")
 # --- Flask App Setup ---
 app = Flask(__name__)
 
-# This is CRITICAL for your Chrome extension to be able to call the API.
 # It allows requests from any origin.
 CORS(app)
 
-# --- The Automation Logic ---
 # We use the SYNC version of Playwright, which is better for Flask.
 def run_automation_task():
     """
@@ -82,7 +79,6 @@ def run_automation_task():
                 print("API: Closing browser.")
                 browser.close()
 
-# --- API Endpoint ---
 @app.route("/download", methods=["POST"])
 def trigger_download():
     """
